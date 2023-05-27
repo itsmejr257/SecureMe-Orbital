@@ -1,22 +1,21 @@
-document.getElementById('logout').addEventListener("click", logouts);
+//Listeners-----------------------------------------------------------
 
-function logouts(){
-  firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-    location.href = 'signup.html'
-    alert('User Logged Out!');
-  }).catch(function(error) {
-    // An error happened.
-    console.log(error);
-  });
-}
-
+/// 1. Submit Button
 let submitbtn = document.getElementById('submitting');
-
 submitbtn.addEventListener("click", signup);
 
+
+
+/**
+ * Function Name : Sign-Up
+ * Description : Function takes in inputs and creates an account via Firebase using email and password. If successful, it updates new user's displayName in Firebase to username input
+ * @param {string} emails - User-Inputted Email
+ * @param {string} passwords - User-Inputted Password
+ * @param {string} username - User-Inputted Name
+ */
 function signup(){
 
+  //Initialization of Variables
   let email_details = document.getElementById('emails').value;
   let password_details = document.getElementById('passwords').value;
   let name_details = document.getElementById('username').value;
@@ -27,35 +26,54 @@ function signup(){
     return;
   }
 
+
+  //Creates a New User
   firebase.auth().createUserWithEmailAndPassword(email_details, password_details).then(function(){
+
+    //If Successful, update Firebase profile displayName
     firebase.auth().onAuthStateChanged(function(user){
+
       var user = firebase.auth().currentUser;
+
       user.updateProfile({
         displayName: name_details
-      }).then(function() {
+      })
+      .then(function() {
         // Update successful.
         console.log('User Profile Updated Successfully');
-      }).catch(function(error) {
+        //Redirect to Welcome Page
+        location.href = 'welcome.html'
+      })
+      //Error Handling for updateProfile
+      .catch(function(error) {
         console.log(error.Message);
-        // An error happened.
       });
-      location.href = 'welcome.html'
     });
+
+    //Error Handling for createUserWithEmailandPassword
   }).catch(function(error) {
-    //Error Handling
     var errorCode = error.code;
     var errorMessage = error.message;
-    if(errorCode){
+
+    if(errorCode)
+    {
       alert(errorMessage);
       console.log(errorCode);
       console.log(errorMessage);
       return;
     }
-  })
+
+  });
 
 
 }
 
+/**
+ * Function Name : validate_email
+ * Description : Function takes in email input and determines if it is a valid format via regex
+ * @param {string} email - User-Inputted Email
+ * @returns {boolean} - True if valid, False if not
+ */
 function validate_email(email){
   expression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
   if (expression.test(email) == true) {
@@ -67,6 +85,12 @@ function validate_email(email){
   }
 }
 
+/**
+ * Function Name : validate_password
+ * Description : Function takes in password input and determines if it is a valid format via regex, in this case, password just has to be > 6 characters long
+ * @param {string} password - User-Inputted Passwiord
+ * @returns {boolean} - True if valid, False if not
+ */
 function validate_password(password){
   //Accepts Lengths Greater than 6
   if (password.length < 6) {
@@ -74,19 +98,4 @@ function validate_password(password){
   } else {
     return true;
   }
-}
-
-function update_name(name){
-  var user = firebase.auth().currentUser;
-  user.updateProfile({
-    displayName: "name"
-  }).then(function() {
-    // Update successful.
-    console.log('User Profile Updated Successfully');
-    console.log(user.email);
-  }).catch(function(error) {
-    console.log(error.Message);
-    // An error happened.
-  });
-
 }
