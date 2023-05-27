@@ -1,0 +1,123 @@
+<style type="text/css">
+input[type="text"],input[type="Password"],input[type="email"]{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type="Submit"]{
+	color: white;
+	font-size: 1.0em;
+	font-family: Bitter,Georgia,Times,"Times New Roman",serif;
+	width: 200px;
+        height: 40px;
+        background-color:  #5D0580;
+        border: 5px solid ;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border-color: rgb(221,216,212);
+        font-weight: bold;
+        float: right;
+	margin-top: 10px;
+}
+input[type="Delete"]{
+	color: white;
+	font-size: 1.0em;
+	font-family: Bitter,Georgia,Times,"Times New Roman",serif;
+	width: 200px;
+        height: 40px;
+        background-color: #FF0000;
+		border: 5px solid ;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border-color: rgb(221,216,212);
+        font-weight: bold;
+        float: right;
+	margin-top: 10px;
+	text-align: center;
+}
+div#centerpage{
+	width: 500px;
+	margin: 0 auto;
+}
+.g-recaptcha{
+	padding-top: 10px;
+}
+
+.FieldInfo{
+	color: rgb(255, 255, 255);
+        font-family: Lato;
+        font-size: 3em;
+	
+}
+a {text-decoration:none;}
+
+
+div.message{
+	
+	border: 2px solid #c0c0c0;
+	padding-top: 0.5em;
+	color: white;
+	font-weight: bold;
+	background-color: #dd0000;
+	font-size: 1em;
+	margin: 0 auto;
+	width: 400px;
+	height: 40px;
+	text-align:center;
+	margin-bottom: 1em;	
+	
+	
+}
+div.SuccessMessage{
+	
+	border: 2px solid #c0c0c0;
+	padding-top: 0.5em;
+	color: white;
+	font-weight: bold;
+	background-color: #00a600;
+	font-size: 1em;
+	margin: 0 auto;
+	width: 400px;
+	height: 40px;
+	text-align:center;
+	margin-bottom: 1em;	
+	
+	
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Lora';
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+button#signout {
+    background-color: #f44336;
+    width: 10%;
+    position:absolute; 
+    top:0; 
+    right:0;
+	margin-top: 10px;
+    margin-right: 10px;
+    
+
+}
+
+
+</style>

@@ -1,0 +1,58 @@
+{
+    "name": "SecureMe!",
+    "version": "1.0",
+    "description": "This extension notifies the user when input is sensitive",
+	"permissions" : [
+        "webRequest",
+        "declarativeNetRequest",
+        "tabs", 
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions":[
+        "*://*/*",
+        "<all_urls>"
+    ],
+    "icons": {
+        "48": "images/icon.png"
+    },
+	"incognito": "split",
+	"action": {
+		"default_icon": "images/icon.png",
+		"default_popup": "background.html"
+	},
+	"background": {
+		"service_worker": "firebase.js"
+	},
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "run_at": "document_end",
+            "css": ["vendor/popper.css", "main.css"],
+            "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "main.js"]
+        },
+        {
+            "matches": ["*://www.facebook.com/*"],
+            "run_at": "document_end",
+            "js": ["facebook-popover.js"],
+            "exclude_matches": ["*://www.facebook.com/messages/*"]
+        },
+        {
+            "matches": ["*://www.facebook.com/messages/*"],
+            "run_at": "document_end",
+            "js": ["facebook-messenger-popover.js"]
+        },
+        {
+            "matches": ["*://www.m.facebook.com/messages/*"],
+            "run_at": "document_end",
+            "js": ["facebook-messenger-popover.js"]
+        },
+        {
+            "matches": ["<all_urls>"],
+            "run_at": "document_end",
+            "js": ["lang.js", "blacklist.js", "false-domains-script.js"]
+        }
+		
+    ],
+    "manifest_version": 3
+}

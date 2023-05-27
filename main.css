@@ -1,0 +1,37 @@
+.popper {
+    background: red;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100000;
+}
+
+#fake_alert {
+    position: absolute;
+    transform: translate3d(230px, 0px, 0px); top: 0px; left: 0px;
+    will-change: transform;
+    text-align: center;
+    cursor: default;
+}
+
+#fake_alert a {
+    color: #FFFFFF;
+}
+
+#fake_alert .popper__arrow {
+    left: 10px;
+}
+
+@media all and (max-width: 700px) {
+    #fake_alert {
+        transform: translate3d(0px, 0px, 0px);
+        top: 0px;
+        left: 0px;
+        max-width: 100%;
+    }
+
+    #fake_alert .popper__arrow {
+        left: initial;
+        right: 130px;
+    }
+}

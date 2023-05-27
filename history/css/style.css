@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#clear_history {
+    background-color: #3C8FC2;
+    margin-left: 10px;
+    padding: 7px 10px 5px 10px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #000000;
+    outline: 0;
+    cursor: pointer;
+}
+
+#history {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#history td, #history th {
+    padding: 8px;
+    border: 1px solid #DDDDDD;
+}
+
+#history tr:nth-child(even){ background-color: #F2F2F2; }
+
+#history tr:hover { background-color: #3C8FC2; }
+
+#history th {
+    background-color: #3C8FC2;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    text-align: left;
+}
+
+#history td { font-weight: normal; }
