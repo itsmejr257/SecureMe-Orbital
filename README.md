@@ -6,36 +6,48 @@ SecureMe is an accessible and intuitive browser extension that aids in keeping i
 
 ### Dependencies
 
-* Browser : Google Chrome
-* https://www.google.com/chrome/?brand=YTUH&gclid=Cj0KCQjw98ujBhCgARIsAD7QeAiG7rxn3mkN9GxZBd9nd1C9_sfD7rjMvQFZRVXiK-OIhenj8gweRcEaAikQEALw_wcB&gclsrc=aw.ds
+* Google Chrome Browser : https://www.google.com/chrome/?brand=YTUH&gclid=Cj0KCQjw98ujBhCgARIsAD7QeAiG7rxn3mkN9GxZBd9nd1C9_sfD7rjMvQFZRVXiK-OIhenj8gweRcEaAikQEALw_wcB&gclsrc=aw.ds
 
 ### How to Set-Up
 
-* 1. Proceed to the Extensions Menu as shown in the Image Below
-* ![alt text](/readme-images/setup-1.jpg)
-* 2. In the Extensions Menu, ensure that Developer mode is Toggled On
-* ![alt text](/readme-images/setup-2.png)
-* 3. Select Load unpacked
-* ![alt text](/readme-images/setup-3.png)
-* 4. Select folder containing project files. In this case, it should be SecureMe-Orbital
-* ![alt text](/readme-images/setup-4.PNG)
-* 5. Your Page should look like this if SecureMe! is successfully loaded in
-* ![alt text](/readme-images/setup-5.PNG)
-* 6. On the top-right of the Browser, Select the Extensions Icon -> Click on the SecureMe! Extension
-* ![alt text](/readme-images/setup-6.png)
-* 7. If the previous steps are done correctly, you should see SecureMe's popup and the extension is ready to be used.
-* ![alt text](/readme-images/setup-7.PNG)
+1. Proceed to the Extensions Menu as shown in the Image Below : <br><br>
+<img src="./readme-images/setup-1.jpg" width="600" height="300"><br><br>
+2. In the Extensions Menu, ensure that Developer mode is Toggled On : <br><br>
+<img src="./readme-images/setup-2.png" width="600" height="60"><br><br>
+3. Select Load unpacked<br><br>
+<img src="./readme-images/setup-3.png" width="600" height="60"><br><br>
+4. Select folder containing project files. In this case, it should be SecureMe-Orbital<br><br>
+<img src="./readme-images/setup-4.PNG" width="600" height="350"><br><br>
+5. Your Page should look like this if SecureMe! is successfully loaded in<br><br>
+<img src="./readme-images/setup-5.PNG" width="600" height="200"><br><br>
+6. On the top-right of the Browser, Select the Extensions Icon -> Click on the SecureMe! Extension<br><br>
+<img src="./readme-images/setup-6.png" width="600" height="400"><br><br>
+7. If the previous steps are done correctly, you should see SecureMe's popup and the extension is ready to be used.<br><br>
+<img src="./readme-images/setup-7.PNG" width="650" height="400"><br><br>
 
-### Features
+## Current Features (Milestone 1)
 
-## IMPORTANT : Before Proceeding with testing the extension. Do 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+Note : Certain elements in the extension have not been implemented, hence you may find certain buttons that not do anything, or redirect to a page which doesnt exist
 
+### Fake Website Detector
+* Current Issues : Only a couple of websites have been added. Do refer to the 'blacklist.js' file to see the possible fake sites you can try
+* Description : When visiting these websites, the extension should be able to detect that you are on a blacklisted site, providing the user with a prompt along with a suggestion to be redirected to the correct site
+
+### Website Input Detectors
+* Current Issues : NIL. Do inform us of bugs and issues should you come accross any
+* Description : Detect input fields in a website and prompts to users of potential submissions of sensitive information. The categories of inputs which would be detected can be found in 'common.js'. Prompts can be clicked again to be removed should it be intrusive
+
+### History Logger
+* Current Issues : Does not work for all sites
+* Description : When a user has submitted information via input fields online, the extension tracks the website, inputs submitted along with the date and time in the history page
+
+### Sign up and Login
+* Current Issues : Sign-up and Login Page still accessible even though User is already Logged-In 
+* Description : Standard Sign-up and Login, which redirects you to a welcome page upon successful sign-up / login 
+
+### 
 ## Authors
+
 
 
 
