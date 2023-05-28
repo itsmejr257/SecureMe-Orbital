@@ -7,7 +7,8 @@
         "declarativeNetRequest",
         "tabs", 
         "storage",
-        "activeTab"
+        "activeTab",
+        "offscreen"
     ],
     "host_permissions":[
         "*://*/*",
@@ -30,22 +31,6 @@
             "run_at": "document_end",
             "css": ["vendor/popper.css", "main.css"],
             "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "main.js"]
-        },
-        {
-            "matches": ["*://www.facebook.com/*"],
-            "run_at": "document_end",
-            "js": ["facebook-popover.js"],
-            "exclude_matches": ["*://www.facebook.com/messages/*"]
-        },
-        {
-            "matches": ["*://www.facebook.com/messages/*"],
-            "run_at": "document_end",
-            "js": ["facebook-messenger-popover.js"]
-        },
-        {
-            "matches": ["*://www.m.facebook.com/messages/*"],
-            "run_at": "document_end",
-            "js": ["facebook-messenger-popover.js"]
         },
         {
             "matches": ["<all_urls>"],
