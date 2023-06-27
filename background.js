@@ -1,25 +1,20 @@
-function translate() {
-    for (const id in lang[current_lang].icon_content) {
-        document.querySelector("#"+id).innerHTML = lang[current_lang].icon_content[id];
-    }
+const sign_up_btn = document.getElementById('signing_up');
 
-    document.querySelector("#quiz_button").setAttribute("href", "quiz/"+current_lang+"/index.html");
-    document.querySelector("#history").setAttribute("href", "history/"+current_lang+"/index.html");
-	document.querySelector("#sign_up").setAttribute("href", "signup"+"/signup.html");
-}
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
         
-const languages = document.querySelectorAll(".languages > div");
+        var displayName = user.displayName;
+        console.log("logged in")
+        sign_up_btn.setAttribute("href", "signup/welcome.html");
+        sign_up_btn.innerHTML = "Logged In : " + displayName;
 
-for (const language of languages) {
-    language.addEventListener("click", function(e) {
-        const lang = this.dataset.lang;
+    }else{
+        console.log("logged out")
+    }
+});
 
-        chrome.storage.local.set({lang: lang}, function() {
-            current_lang = lang;
-            translate();
-        });
-    });
-}
+
+
 
 chrome.storage.local.get(["restrictiveness"], function(result) {
     const restrictiveness = result.restrictiveness ? result.restrictiveness : 5;

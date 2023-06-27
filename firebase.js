@@ -10,12 +10,29 @@ const firebaseConfig = {
 
 };
 
-
 // Initialize Firebase
 try{
   firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var displayName = user.displayName;
+      document.getElementById("name").innerHTML = displayName;
+      console.log("logged in");
+  
+      chrome.storage.local.set({'current_user': displayName}, function() {
+        console.log("you saved me!!");
+      });
+    } else {
+      //Redirect back to signup page
+      var displayName = "not logged in"
+      chrome.storage.local.set({'current_user': displayName}, function() {
+        console.log("not logged in!!");
+      });
+    }
+  });
+  
 }
 catch(e){
   console.log(e);
 }
-

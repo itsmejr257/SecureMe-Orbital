@@ -1,4 +1,12 @@
 //Listeners-----------------------------------------------------------
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("logged in");
+    location.href = 'welcome.html'
+  } else {
+    console.log("not logged in")
+  }
+});
 
 /// 1. Submit Button
 let submitbtn = document.getElementById('submitting');

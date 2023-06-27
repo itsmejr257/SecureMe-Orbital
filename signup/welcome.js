@@ -1,14 +1,22 @@
 /** Function runs on page load
- * Description : Function determines if the user whcih is accessing welcome page is logged in or not, if logged in, it displays their username. Else, it redirects them back to the sign up
+ * Description : Function determines if the user which is accessing welcome page is logged in or not, if logged in, it displays their username. Else, it redirects them back to the sign up
  * page
  */ 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
+    // User is signed in, displays name
     var displayName = user.displayName;
     document.getElementById("name").innerHTML = displayName;
+    console.log("logged in");
+
+    chrome.storage.local.set({'current_user': displayName}, function() {
+      console.log("you saved me!!");
+    });
+
   } else {
+    //Redirect back to signup page
     location.href = 'signup.html'
+    console.log("not logged in")
   }
 });
 

@@ -10,6 +10,7 @@ chrome.storage.local.get(["history"], function(result) {
     for (const data of history) {
         const website = data.website;
         const inputs  = data.inputs.join(", ");
+        const username = data.namer;
 
         const date    = new Date(data.time);
         const day     = date.getDate().toString().padStart(2, "0");
@@ -25,6 +26,7 @@ chrome.storage.local.get(["history"], function(result) {
                 <td>${website}</td>
                 <td>${inputs}</td>
                 <td>${time}</td>
+                <td>${username}</td>
             </tr>
         `;
         

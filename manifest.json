@@ -7,8 +7,7 @@
         "declarativeNetRequest",
         "tabs", 
         "storage",
-        "activeTab",
-        "offscreen"
+        "activeTab"
     ],
     "host_permissions":[
         "*://*/*",
@@ -31,6 +30,27 @@
             "run_at": "document_end",
             "css": ["vendor/popper.css", "main.css"],
             "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "main.js"]
+        },
+        {
+            "matches": ["*://*/*"],
+            "run_at": "document_start",
+            "js": ["firebase/firebase-app.js","firebase/firebase-auth.js", "firebase/firebase-database.js", "firebase.js"]
+        },
+        {
+            "matches": ["*://www.facebook.com/*"],
+            "run_at": "document_end",
+            "js": ["facebook.js"],
+            "exclude_matches": ["*://www.facebook.com/messages/*"]
+        },
+        {
+            "matches": ["*://www.facebook.com/messages/*"],
+            "run_at": "document_end",
+            "js": ["facebook.js"]
+        },
+        {
+            "matches": ["*://www.m.facebook.com/messages/*"],
+            "run_at": "document_end",
+            "js": ["facebook.js"]
         },
         {
             "matches": ["<all_urls>"],

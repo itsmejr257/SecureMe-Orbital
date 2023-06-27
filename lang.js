@@ -1,4 +1,4 @@
-let current_lang = "";
+let current_lang = "en";
 
 chrome.storage.local.get(["lang"], function(result) {
     current_lang = result.lang  ? result.lang : "en";
@@ -34,7 +34,8 @@ const lang = {
                         <br/>
                         share any personal information. Were you maybe trying
                         <br/>
-                        to access <a href="//{original_domain}">{original_domain}</a>?`
+                        to access <a href="//{original_domain}">{original_domain}</a>?`,
+            "blacklisted": `This is a Blacklisted Site. We recommend to not proceed any further`
         }
     },
     "cn": {

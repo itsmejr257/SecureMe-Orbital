@@ -10,7 +10,7 @@ function renderPoppersForInputs() {
                         isWatchingSubmission = true;
                         watchForFormSubmission();
                     }
-                    createSensitivePopper(element, lang[current_lang].forms.inputs);
+                    createSensitivePopper(element, lang['en'].forms.inputs);
                 }
             }
         });
@@ -49,15 +49,20 @@ function observeDomChanges() {
     });
 }
 
+var current_user = "";
+chrome.storage.local.get('current_user', function(result){
+    current_user = result.current_user;
+    console.log(result.current_user);
+})
+
 function handleFormSubmission(event) {
     event.preventDefault();
 
-    if (!confirm(lang[current_lang].forms.submit)) {
+    if (!confirm(lang['en'].forms.submit)) {
         return false;
     } else {
         chrome.storage.local.get(["history"], function(result) {
             const history = result.history ? result.history : [];
-
             const website = window.location.hostname;
             let inputs    = []; 
             const time    = new Date().getTime();
@@ -79,7 +84,8 @@ function handleFormSubmission(event) {
             const new_history = {
                 "website": website,
                 "inputs": uniqueInputs,
-                "time": time
+                "time": time,
+                "namer": current_user
             }
 			
             history.push(new_history);

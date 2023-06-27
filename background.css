@@ -46,6 +46,20 @@ html, body{ margin: 0; padding: 0; }
     margin: 0;
 }
 
+.sign_up{
+    background-color: #486475;
+    padding: 5px 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #000000;
+    border-radius: 20%;
+    outline: 0;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+    margin:3px;
+}
 .main .content.quiz p {
     position: absolute;
     top: 10px;
@@ -54,11 +68,11 @@ html, body{ margin: 0; padding: 0; }
 
 .main .content.quiz .take_quiz {
     background-color: #3C8FC2;
-    padding: 50px 25px;
+    padding: 25px 25px;
     color: #FFFFFF;
     font-weight: bold;
     text-decoration: none;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     border-radius: 100%;
     outline: 0;
     display: inline-block;
@@ -87,6 +101,7 @@ html, body{ margin: 0; padding: 0; }
 
 .main .content .restrict_bar {
     background-color: #4CB5F5;
+    border: 3px solid #000000;
     position: relative;
     margin: 15px auto;
     width: 90%;
@@ -97,7 +112,7 @@ html, body{ margin: 0; padding: 0; }
     float: left;
     width: 20%;
     height: 100%;
-    border-right: 2px solid #527387;
+    border-right: 3px solid #000000;
     box-sizing: border-box;
 }
 

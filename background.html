@@ -12,31 +12,19 @@
         <div class="main">
             <div class="header text-center">
                 <img src="images/icon.png" alt="">
-                <label id="header"></label>
+                <label id="header">Secure Me</label>
+                <a href="signup/signup.html" target=”_blank” id="signing_up" class = "sign_up">Sign up</a>
             </div>
 
             <div class="content quiz text-center">
-                <p id="quiz_text"></p>
+                <p id="quiz_text">Take the Quiz</p>
 
-                <a href="" target="_blank" id="quiz_button" class="take_quiz"></a>
-				
-				<a href="" target="_blank" id="sign_up" class="take_quiz">Sign Up</a>
-            </div>
-			
+                <a href="quiz/en/index.html" target=”_blank” id="quiz_button" class="take_quiz">Quiz</a>
 
-            <div class="content">
-                <p id="language"></p>
-
-                <div class="languages">
-                    <div data-lang="en"><label id="language_1"></label><br/><img src="images/USA.png" alt=""></div>
-                    <div data-lang="cn"><label id="language_2"></label><br/><img src="images/China.png" alt=""></div>
-                    <div data-lang="my"><label id="language_3"></label><br/><img src="images/MALAYSIA.png" alt=""></div>
-                    <div data-lang="in"><label id="language_4"></label><br/><img src="images/in.png" alt=""></div>
-                </div>
             </div>
 
             <div class="content">
-                <p id="restrictiveness"></p>
+                <p id="restrictiveness">Current Restrictiveness</p>
 
                 <div class="restrict_bar">
                     <div></div>
@@ -48,13 +36,18 @@
             </div>
 
             <div class="content history text-center">
-                <a id="history" href="" target="_blank"></a>
+                <a id="history" href="history/en/index.html" target=”_blank”>Show History</a>
             </div>
         </div>
-        
+
         <script src="lang.js"></script>
+        <script src="../firebase/firebase-app.js"></script>
+        <script src="../firebase/firebase-auth.js"></script>
+        <script src="../firebase.js"></script>
 		<script src="background.js"></script>
 		<script src="config.js"></script>
 		<script src="adblock.js"></script>
+
+        
     </body>
 </html>

@@ -1,4 +1,13 @@
 //Listeners-----------------------------------------------------------
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("logged in");
+    location.href = 'welcome.html'
+  } else {
+    console.log("not logged in")
+  }
+});
+
 /// 1. Login Button
 let loginbtn = document.getElementById('submit_login');
 loginbtn.addEventListener("click", login);
@@ -19,7 +28,6 @@ function login(){
 
   //Use firebase signInWithEmailAndPassword to validate account
   firebase.auth().signInWithEmailAndPassword(email_details, password_details).then(function(){
-
     //if successful, redirect to welcome page
     location.href = 'welcome.html'
 
