@@ -15,7 +15,7 @@ function checkChatMessages() {
             const text = message.innerText.toLowerCase();
             if (TextToLookFor.concat(['number']).some((stuff) => text.includes(stuff))) {
                 console.log("keyword found");
-                createSensitivePopper(element, lang['en'].facebook.popover, 'bottom');
+                createSensitivePopper(element, lang[current_lang].facebook.popover, 'bottom');
                 break;
             }
         }

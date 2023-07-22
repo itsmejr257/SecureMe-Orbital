@@ -10,7 +10,7 @@ function renderPoppersForInputs() {
                         isWatchingSubmission = true;
                         watchForFormSubmission();
                     }
-                    createSensitivePopper(element, lang['en'].forms.inputs);
+                    createSensitivePopper(element, lang[current_lang].forms.inputs);
                 }
             }
         });
@@ -58,7 +58,7 @@ chrome.storage.local.get('current_user', function(result){
 function handleFormSubmission(event) {
     event.preventDefault();
 
-    if (!confirm(lang['en'].forms.submit)) {
+    if (!confirm(lang[current_lang].forms.submit)) {
         return false;
     } else {
         chrome.storage.local.get(["history"], function(result) {

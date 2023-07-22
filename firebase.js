@@ -25,10 +25,6 @@ try{
       });
     } else {
       //Redirect back to signup page
-      var displayName = "not logged in"
-      chrome.storage.local.set({'current_user': displayName}, function() {
-        console.log("not logged in!!");
-      });
     }
   });
   

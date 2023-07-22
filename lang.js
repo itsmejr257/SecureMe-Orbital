@@ -1,4 +1,4 @@
-let current_lang = "en";
+let current_lang = "";
 
 chrome.storage.local.get(["lang"], function(result) {
     current_lang = result.lang  ? result.lang : "en";
@@ -12,7 +12,7 @@ const lang = {
     "en": {
         "icon_content": {
             "header": "SecureMe! (1.0.0)",
-            "quiz_text": "Take our Quiz<br/>Here:",
+            "quiz_text": "Take Quiz:",
             "quiz_button": "Start Quiz",
             "language": "Select Language",
             "language_1": "English",
@@ -63,7 +63,8 @@ const lang = {
                         <br/>
                         分享任何个人信息。你可能正在尝试
                         <br/>
-                        进接 <a href="//{original_domain}">{original_domain}</a>?`
+                        进接 <a href="//{original_domain}">{original_domain}</a>?`,
+            "blacklisted": `这是一个列入黑名单的网站。我们建议不要继续进行`
         }
     },
     "my": {
@@ -91,14 +92,15 @@ const lang = {
                         <br/>
                         kongsi apa-apa maklumat peribadi. Adakah anda mungkin cuba
                         <br/>
-                        untuk mengakses <a href="//{original_domain}">{original_domain}</a>?`
+                        untuk mengakses <a href="//{original_domain}">{original_domain}</a>?`,
+            "blacklisted": `Ini adalah Tapak Disenarai Hitam. Kami mengesyorkan untuk tidak meneruskan lagi`
         }
     },
     "in": {
         "icon_content": {
             "header": "IN - SecureMe! (1.0.0)",
-            "quiz_text": "எங்கள் வினாடி வினாவை எடுங்கள்<br/>இங்கே:",
-            "quiz_button": "வினாடி வினா தொடங்கு",
+            "quiz_text": "வினாடி <br> வினா எடு:",
+            "quiz_button": "வினாடி வினா <br> தொடங்கு",
             "language": "மொழி தேர்ந்தெடு",
             "language_1": "ஆங்கிலம்",
             "language_2": "சீன",
@@ -119,7 +121,8 @@ const lang = {
                         <br/>
 						எந்தவொரு தனிப்பட்ட தகவலையும் பகிரலாம். ஒருவேளை நீங்கள் முயற்சி செய்யலாம்
                         <br/>
-						அணுக <a href="//{original_domain}">{original_domain}</a>?`
+						அணுக <a href="//{original_domain}">{original_domain}</a>?`,
+            "blacklisted": `இது பிளாக்லிஸ்ட் செய்யப்பட்ட தளம். மேலும் தொடர வேண்டாம் என்று பரிந்துரைக்கிறோம்`
         }
     }
 };

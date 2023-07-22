@@ -29,6 +29,8 @@ function login(){
   //Use firebase signInWithEmailAndPassword to validate account
   firebase.auth().signInWithEmailAndPassword(email_details, password_details).then(function(){
     //if successful, redirect to welcome page
+
+    alert('Logged in!')
     location.href = 'welcome.html'
 
     //Error Handling
@@ -38,10 +40,9 @@ function login(){
     var errorMessage = error.message;
     console.log(errorCode);
     console.log(errorMessage);
+    alert(errorMessage);
 
   });
-
-  alert('Logged in!')
 
 }
 

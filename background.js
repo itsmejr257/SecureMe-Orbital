@@ -13,6 +13,25 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+function translate() {
+    for (const id in lang[current_lang].icon_content) {
+        document.querySelector("#"+id).innerHTML = lang[current_lang].icon_content[id];
+    }
+}
+
+const languages = document.querySelectorAll(".languages > div");
+
+for (const language of languages) {
+    language.addEventListener("click", function(e) {
+        const lang = this.dataset.lang;
+
+        chrome.storage.local.set({lang: lang}, function() {
+            current_lang = lang;
+            translate();
+        });
+    });
+}
+
 
 
 

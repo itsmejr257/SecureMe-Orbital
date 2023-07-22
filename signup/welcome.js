@@ -32,6 +32,11 @@ document.getElementById('logout').addEventListener("click", logouts);
  */
 function logouts(){
   firebase.auth().signOut().then(function() {
+
+    var displayName = "not logged in"
+    chrome.storage.local.set({'current_user': displayName}, function() {
+      console.log("not logged in!!");
+    });
     // Sign-out successful.
     location.href = 'signup.html'
     alert('User Logged Out!');
