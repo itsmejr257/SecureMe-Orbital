@@ -110,7 +110,7 @@ html, body{ margin: 0; padding: 0; }
 
 .main .content .restrict_bar > div {
     float: left;
-    width: 20%;
+    width: 33.3333333333333333333%;
     height: 100%;
     border-right: 3px solid #000000;
     box-sizing: border-box;

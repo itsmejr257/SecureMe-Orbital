@@ -5,13 +5,14 @@ firebase.auth().onAuthStateChanged(function(user) {
         
         var displayName = user.displayName;
         console.log("logged in")
-        sign_up_btn.setAttribute("href", "signup/welcome.html");
+        sign_up_btn.setAttribute("href", "../signup/welcome.html");
         sign_up_btn.innerHTML = "Logged In : " + displayName;
 
     }else{
         console.log("logged out")
     }
 });
+
 
 function translate() {
     for (const id in lang[current_lang].icon_content) {
@@ -36,7 +37,7 @@ for (const language of languages) {
 
 
 chrome.storage.local.get(["restrictiveness"], function(result) {
-    const restrictiveness = result.restrictiveness ? result.restrictiveness : 5;
+    const restrictiveness = result.restrictiveness ? result.restrictiveness : 3;
 
     for (let i = 1; i <= restrictiveness; i++) {
         document.querySelector(".restrict_bar > div:nth-child("+i+")").classList.add("red");

@@ -1,18 +1,7 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in, displays name
-      console.log("logged in");
-    } else {
-      console.log("not logged");
-    }
-  });
-
 var answers = {
-    "1": "3",
+    "1": "2",
     "2": "2",
-    "3": "2",
-    "4": "2",
-    "5": "1"
+    "3": "1"
 }
 
 var restrict_test;
@@ -22,7 +11,6 @@ chrome.storage.local.get(["restrict_test"], function(result) {
 
     if (!restrict_test) {
         restrict_test = {
-            adblock: false,
             false_domain: false,
             main: false,
             messenger: false
@@ -35,11 +23,10 @@ var answer_buttons = document.querySelectorAll(".answer");
 if (answer_buttons.length > 0) {
 
     if (answer_buttons[0].dataset.question == "1") {
-        chrome.storage.local.set({restrictiveness: 5});
-        chrome.storage.local.set({restrictiveness_test: 5});
+        chrome.storage.local.set({restrictiveness: 3});
+        chrome.storage.local.set({restrictiveness_test: 3});
         chrome.storage.local.set({restrict: 
             {
-                adblock: false,
                 false_domain: false,
                 main: false,
                 messenger: false
@@ -62,20 +49,17 @@ if (answer_buttons.length > 0) {
                     chrome.storage.local.set({restrictiveness_test: restrictiveness_test});
 
                     switch(question) {
-                        case "1": restrict_test.adblock = true; break;
-                        case "3": restrict_test.false_domain = true; break;
-                        case "4": restrict_test.main = true; break;
-                        case "5": restrict_test.messenger = true; break;
+                        case "1": restrict_test.false_domain = true; break;
+                        case "2": restrict_test.main = true; break;
+                        case "3": restrict_test.messenger = true; break;
                     }
                 } else {
                     answer_url += "wrong";
 
                     switch(question) {
-                        case "1": restrict_test.adblock = false; break;
-                        case "2": restrict_test.adblock = false; break;
-                        case "3": restrict_test.false_domain = false; break;
-                        case "4": restrict_test.main = false; break;
-                        case "5": restrict_test.messenger = false; break;
+                        case "1": restrict_test.false_domain = false; break;
+                        case "2": restrict_test.main = false; break;
+                        case "3": restrict_test.messenger = false; break;
                     }
 
                 }
@@ -91,6 +75,7 @@ if (answer_buttons.length > 0) {
 }
 
 if (document.querySelector(".next-question")) {
+    console.log("i am here")
     document.querySelector(".next-question").addEventListener("click", function() {
         var next = this.dataset.next;
         var url = "question"+next+".html";
@@ -100,6 +85,7 @@ if (document.querySelector(".next-question")) {
 
             chrome.storage.local.get(["restrictiveness_test"], function(result) {
                 var restrictiveness_test = result.restrictiveness_test;
+                console.log(restrictiveness_test);
 
                 chrome.storage.local.set({restrictiveness: restrictiveness_test}, function() {
                     chrome.storage.local.set({restrict: restrict_test}, function() {

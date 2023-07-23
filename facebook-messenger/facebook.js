@@ -23,4 +23,8 @@ function checkChatMessages() {
     })
 }
 
-setInterval(checkChatMessages, 2000);
+chrome.storage.local.get(["restrict"], function(result) {
+    if (!result.restrict.messenger) {
+        setInterval(checkChatMessages, 2000);
+    }
+});

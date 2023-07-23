@@ -19,7 +19,7 @@
 	"incognito": "split",
 	"action": {
 		"default_icon": "images/icon.png",
-		"default_popup": "background.html"
+		"default_popup": "main/background.html"
 	},
 	"background": {
 		"service_worker": "firebase.js"
@@ -28,8 +28,8 @@
         {
             "matches": ["*://*/*"],
             "run_at": "document_end",
-            "css": ["vendor/popper.css", "main.css"],
-            "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "main.js"]
+            "css": ["vendor/popper.css", "reminders-popup/main.css"],
+            "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "reminders-popup/main.js"]
         },
         {
             "matches": ["*://*/*"],
@@ -39,23 +39,23 @@
         {
             "matches": ["*://www.facebook.com/*"],
             "run_at": "document_end",
-            "js": ["facebook.js"],
+            "js": ["facebook-messenger/facebook.js"],
             "exclude_matches": ["*://www.facebook.com/messages/*"]
         },
         {
             "matches": ["*://www.facebook.com/messages/*"],
             "run_at": "document_end",
-            "js": ["facebook.js"]
+            "js": ["facebook-messenger/facebook.js"]
         },
         {
             "matches": ["*://www.m.facebook.com/messages/*"],
             "run_at": "document_end",
-            "js": ["facebook.js"]
+            "js": ["facebook-messenger/facebook.js"]
         },
         {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
-            "js": ["lang.js", "blacklist.js", "false-domains-script.js"]
+            "js": ["lang.js", "website-blacklister/blacklist.js", "website-blacklister/false-domains-script.js"]
         }
 		
     ],

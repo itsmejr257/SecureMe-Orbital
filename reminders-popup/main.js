@@ -80,14 +80,14 @@ function handleFormSubmission(event) {
             $.each(inputs, function(i, el){
                 if($.inArray(el, uniqueInputs) === -1) uniqueInputs.push(el);
             });
-
+            
             const new_history = {
                 "website": website,
                 "inputs": uniqueInputs,
                 "time": time,
                 "namer": current_user
             }
-			
+
             history.push(new_history);
 
             chrome.storage.local.set({history: history}, function() {
