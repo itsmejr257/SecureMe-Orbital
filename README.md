@@ -54,7 +54,6 @@ SecureMe is an accessible and intuitive browser extension that aids in keeping i
 * Description : User should be able to select a language which they want their reminders to be in
 
 ## Further Info to the Project
-
 https://docs.google.com/document/d/1M-8ewBqkf7GK9fOESR7_7Lvfgm_xpCRubro3Olv3iEo/edit?usp=sharing
 
 ## Authors
