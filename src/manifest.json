@@ -19,22 +19,22 @@
 	"incognito": "split",
 	"action": {
 		"default_icon": "images/icon.png",
-		"default_popup": "main/background.html"
+		"default_popup": "popup/background.html"
 	},
 	"background": {
-		"service_worker": "firebase.js"
+		"service_worker": "service-worker.js"
 	},
     "content_scripts": [
         {
             "matches": ["*://*/*"],
             "run_at": "document_end",
             "css": ["vendor/popper.css", "reminders-popup/main.css"],
-            "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "common.js", "reminders-popup/main.js"]
+            "js": ["vendor/jquery-3.3.1.min.js", "vendor/popper.min.js", "background-scripts/common.js", "reminders-popup/main.js"]
         },
         {
             "matches": ["*://*/*"],
             "run_at": "document_start",
-            "js": ["firebase/firebase-app.js","firebase/firebase-auth.js", "firebase/firebase-database.js", "firebase.js"]
+            "js": ["firebase/firebase-app.js","firebase/firebase-auth.js", "firebase/firebase-database.js", "service-worker.js"]
         },
         {
             "matches": ["*://www.facebook.com/*"],
@@ -55,7 +55,7 @@
         {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
-            "js": ["lang.js", "website-blacklister/blacklist.js", "website-blacklister/false-domains-script.js"]
+            "js": ["background-scripts/lang.js", "website-blacklister/blacklist.js", "website-blacklister/false-domains-script.js"]
         }
 		
     ],

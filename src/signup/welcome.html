@@ -36,6 +36,11 @@
     }
   </style>
 
+<script src="../firebase/firebase-app.js"></script>
+<script src="../firebase/firebase-auth.js"></script>
+<script src="../service-worker.js"></script>
+
+
 </head>
 
 
@@ -61,21 +66,20 @@
     </div>
   </nav>
 	
+
+	
 	<section class="portfolio" id="portfolio" style="background-color:#3C8FC2">
     <!-- Form for Login-->
     <div id="centerpage">
-      <br><a href="login.html"><span class="FieldInfo">Already have an account? Click Here to Log-In </span></a>
+      <br><a><span></span></a>
 
-      <fieldset>
 
-        <fieldset>
-          <h4>Name:</h4><input id='username' type="info" Name="username" value=""><br>
-          <h4>Email (This will be your Login ID) :</h4><input id='emails' type="info" Name="Email" value=""><br>
-          <h4>Password:</h4><input id='passwords'type="password" Name="Password" value=""><br>
-          <button id="submitting" class="btn-secondary">Sign Up</button><br>
-        </fieldset>	
 
-      </fieldset>	
+          <h1> Welcome, <span id="name"></span></h1>
+          <button class="btn-secondary" id="logout">Logout</button>
+
+
+ 
 
     </div>
 	</section>
@@ -361,10 +365,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="./js/freelancer.min.js"></script>
-  <script src="../firebase/firebase-app.js"></script>
-  <script src="../firebase/firebase-auth.js"></script>
-  <script src="../firebase.js"></script>
-  <script src="signup.js"></script>
+  <script src="welcome.js"></script>
 	    
 
   </body>
